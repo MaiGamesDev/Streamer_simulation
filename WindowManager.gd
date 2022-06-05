@@ -47,7 +47,7 @@ func _on_Minimize_pressed():
 		open()
 
 func _on_Close_pressed():
-	queue_free()
+	hide()
 
 
 func _on_Window_pressed():
@@ -104,9 +104,17 @@ func _on_LeftControl_gui_input(event):
 			rect_size_origin = null
 			
 	if event is InputEventMouseMotion and drag_position:
-		rect_global_position.x = (get_global_mouse_position() - drag_position).x
+		if rect_size.x > rect_min_size.x + 1:
+			rect_global_position.x = (get_global_mouse_position() - drag_position).x
 		rect_size.x = (rect_size_origin - (get_global_mouse_position() - rect_global_position_origin - drag_position)).x
 
 
 func _on_Tween_tween_all_completed():
 	is_window_closed = !is_window_closed
+
+
+func _on_IconGagle_pressed():
+	show()
+	if is_window_closed == true:
+		open()
+	
