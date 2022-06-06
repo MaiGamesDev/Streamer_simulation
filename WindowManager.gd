@@ -15,6 +15,7 @@ var rect_global_position_origin = null
 func _ready():
 	current_rect_size = rect_size
 
+
 func close():
 	
 	$Tween.interpolate_property(self, "rect_size", rect_size, Vector2(0,0), tween_time, $Tween.TRANS_LINEAR,Tween.EASE_IN)
@@ -30,6 +31,9 @@ func close():
 	current_rect_global_position = rect_global_position
 
 func open():
+	
+	show()
+	
 	$Tween.interpolate_property(self, "rect_size", rect_size, current_rect_size, tween_time, $Tween.TRANS_LINEAR,Tween.EASE_IN)
 	$Tween.start()
 	
@@ -111,6 +115,8 @@ func _on_LeftControl_gui_input(event):
 
 func _on_Tween_tween_all_completed():
 	is_window_closed = !is_window_closed
+	if is_window_closed:
+		hide()
 
 
 func _on_IconGagle_pressed():
