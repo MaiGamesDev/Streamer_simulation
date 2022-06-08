@@ -14,7 +14,10 @@ var rect_global_position_origin = null
 
 func _ready():
 	current_rect_size = rect_size
+	move_innerwindow()
 
+func move_innerwindow():
+	move_child($InnerWindow, 0)
 
 func close():
 	
@@ -53,13 +56,9 @@ func _on_Minimize_pressed():
 func _on_Close_pressed():
 	hide()
 
-
-func _on_Window_pressed():
-	_on_Minimize_pressed()
-
-
 func _on_Window_window_pressed(position):
 	window_button_position = position
+	_on_Minimize_pressed()
 
 
 func _on_TopControl_gui_input(event):
