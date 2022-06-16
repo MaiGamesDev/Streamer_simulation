@@ -9,7 +9,7 @@ margin_top = 40.0
 margin_right = 1160.0
 margin_bottom = 616.0
 rect_min_size = Vector2( 560, 320 )
-mouse_filter = 2
+mouse_filter = 1
 script = ExtResource( 2 )
 
 [node name="NinePatch" type="NinePatchRect" parent="."]
@@ -116,6 +116,7 @@ mouse_filter = 2
 
 [node name="Tween" type="Tween" parent="."]
 
+[connection signal="gui_input" from="." to="." method="_on_Window_gui_input"]
 [connection signal="gui_input" from="ControlWindow/VBox/TopControl" to="." method="_on_TopControl_gui_input"]
 [connection signal="gui_input" from="ControlWindow/VBox/BottomControl" to="." method="_on_BottomControl_gui_input"]
 [connection signal="gui_input" from="ControlWindow/HBox/LeftControl" to="." method="_on_LeftControl_gui_input"]

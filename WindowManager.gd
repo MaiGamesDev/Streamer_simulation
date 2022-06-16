@@ -123,3 +123,14 @@ func _on_IconGagle_pressed():
 	if is_window_closed == true:
 		open()
 	
+
+
+func _on_Window_gui_input(event):
+		if event.pressed:
+			drag_position = get_global_mouse_position() - rect_global_position
+			rect_size_origin = rect_size
+			rect_global_position_origin = rect_global_position
+		else:
+			drag_position = null
+			rect_size_origin = null
+	
