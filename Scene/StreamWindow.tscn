@@ -1,0 +1,124 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ngo_sprites/ame sprites/stream_ame_idle_happy_004_3.png" type="Texture" id=1]
+[ext_resource path="res://Scene/ChatStream.gd" type="Script" id=2]
+[ext_resource path="res://neodgm.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scene/Stream.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[node name="InnerWindow" type="MarginContainer"]
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+color = Color( 0.866667, 0.917647, 0.858824, 1 )
+
+[node name="HBox" type="HBoxContainer" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="Stream" type="MarginContainer" parent="HBox"]
+margin_right = 976.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 4 )
+
+[node name="Ame" type="TextureRect" parent="HBox/Stream"]
+margin_right = 976.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+
+[node name="VBox" type="VBoxContainer" parent="HBox/Stream"]
+margin_right = 976.0
+margin_bottom = 720.0
+
+[node name="Control" type="Control" parent="HBox/Stream/VBox"]
+margin_right = 976.0
+margin_bottom = 630.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Subtitle" type="CenterContainer" parent="HBox/Stream/VBox"]
+margin_top = 634.0
+margin_right = 976.0
+margin_bottom = 666.0
+
+[node name="Label" type="Label" parent="HBox/Stream/VBox/Subtitle"]
+margin_left = 408.0
+margin_right = 568.0
+margin_bottom = 32.0
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 1 )
+text = "안녕하살법"
+
+[node name="Background" type="ColorRect" parent="HBox/Stream/VBox/Subtitle"]
+show_behind_parent = true
+margin_left = 488.0
+margin_top = 16.0
+margin_right = 488.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+
+[node name="Control2" type="Control" parent="HBox/Stream/VBox"]
+margin_top = 670.0
+margin_right = 976.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Chat" type="MarginContainer" parent="HBox"]
+margin_left = 980.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 300, 0 )
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="HBox/Chat"]
+margin_right = 300.0
+margin_bottom = 720.0
+mouse_filter = 2
+color = Color( 0.858824, 0.858824, 0.858824, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBox/Chat"]
+margin_right = 300.0
+margin_bottom = 720.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBox/Chat/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 692.0
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+scroll_following = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/Chat/VBoxContainer"]
+margin_top = 696.0
+margin_right = 300.0
+margin_bottom = 720.0
+
+[node name="Label" type="Label" parent="HBox/Chat/VBoxContainer/HBoxContainer"]
+margin_top = 5.0
+margin_bottom = 19.0
+
+[node name="LineEdit" type="LineEdit" parent="HBox/Chat/VBoxContainer/HBoxContainer"]
+margin_left = 4.0
+margin_right = 300.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
