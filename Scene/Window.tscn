@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://window_ninepatch.png" type="Texture" id=1]
-[ext_resource path="res://WindowManager.gd" type="Script" id=2]
+[ext_resource path="res://Scene/WindowManager.gd" type="Script" id=2]
+
 
 [node name="Window" type="MarginContainer"]
 margin_left = 128.0
