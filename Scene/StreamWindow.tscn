@@ -1,9 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://ngo_sprites/ame sprites/stream_ame_idle_happy_004_3.png" type="Texture" id=1]
+[ext_resource path="res://Resource/Art/stream_cho_akaruku_superchat_000.png" type="Texture" id=1]
 [ext_resource path="res://Scene/ChatStream.gd" type="Script" id=2]
 [ext_resource path="res://neodgm.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scene/Stream.gd" type="Script" id=4]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -34,14 +42,18 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 4 )
 
-[node name="Ame" type="TextureRect" parent="HBox/Stream"]
+[node name="Streamer" type="CenterContainer" parent="HBox/Stream"]
 margin_right = 976.0
 margin_bottom = 720.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 1 )
-expand = true
-stretch_mode = 7
+
+[node name="Control" type="Control" parent="HBox/Stream/Streamer"]
+margin_left = 488.0
+margin_top = 360.0
+margin_right = 488.0
+margin_bottom = 360.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="HBox/Stream/Streamer/Control"]
+frames = SubResource( 3 )
 
 [node name="VBox" type="VBoxContainer" parent="HBox/Stream"]
 margin_right = 976.0
