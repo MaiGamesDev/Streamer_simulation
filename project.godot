@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Gall_simulation"
-run/main_scene="res://Scene/WindowSample.tscn"
+run/main_scene="res://WindowSample.tscn"
 config/icon="res://icon.png"
 
 [display]
