@@ -24,6 +24,10 @@ config/name="Gall_simulation"
 run/main_scene="res://WindowSample.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Singleton="*res://Scene/Singleton.gd"
+
 [display]
 
 window/size/width=1280

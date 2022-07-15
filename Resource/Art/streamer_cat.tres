@@ -1,0 +1,6 @@
+[gd_resource type="AnimatedTexture" load_steps=2 format=2]
+
+[ext_resource path="res://Resource/Art/stream_cho_nyo_000.png" type="Texture" id=1]
+
+[resource]
+frame_0/texture = ExtResource( 1 )

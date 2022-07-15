@@ -1,9 +1,21 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Resource/Art/streamer_idle.tres" type="Texture" id=1]
+[ext_resource path="res://Resource/Art/streamer_pose.tres" type="Texture" id=1]
 [ext_resource path="res://Scene/StreamChat.gd" type="Script" id=2]
 [ext_resource path="res://neodgm.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scene/Stream.gd" type="Script" id=4]
+[ext_resource path="res://Resource/Art/streamer_business.tres" type="Texture" id=5]
+[ext_resource path="res://Resource/Art/streamer_crazy_smile.tres" type="Texture" id=6]
+[ext_resource path="res://Resource/Art/streamer_cat.tres" type="Texture" id=7]
+[ext_resource path="res://Resource/Art/streamer_sexy.tres" type="Texture" id=8]
+[ext_resource path="res://Resource/Art/streamer_cry.tres" type="Texture" id=9]
+[ext_resource path="res://Resource/Art/streamer_crazy.tres" type="Texture" id=10]
+[ext_resource path="res://Resource/Art/streamer_idle.tres" type="Texture" id=11]
+[ext_resource path="res://Resource/Art/streamer_angry.tres" type="Texture" id=12]
+[ext_resource path="res://Resource/Art/streamer_hello.tres" type="Texture" id=13]
+[ext_resource path="res://Resource/Art/streamer_pointing.tres" type="Texture" id=14]
+[ext_resource path="res://Resource/Art/streamer_crazy_smile2.tres" type="Texture" id=15]
+[ext_resource path="res://Scene/StreamSubtitle.gd" type="Script" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -34,6 +46,18 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 4 )
 stream_talk_lines_data = "res://Resource/Data/stream_talk_lines.json"
+idle_texture = ExtResource( 11 )
+angry_texture = ExtResource( 12 )
+business_texture = ExtResource( 5 )
+cat_texture = ExtResource( 7 )
+crazy_texture = ExtResource( 10 )
+crazy2_texture = ExtResource( 6 )
+crazy3_texture = ExtResource( 15 )
+cry_texture = ExtResource( 9 )
+hello_texture = ExtResource( 13 )
+pointing_texture = ExtResource( 14 )
+pose_texture = ExtResource( 1 )
+sexy_texture = ExtResource( 8 )
 
 [node name="Sprite" type="TextureRect" parent="HBox/Stream"]
 margin_right = 976.0
@@ -55,6 +79,7 @@ size_flags_vertical = 3
 margin_top = 634.0
 margin_right = 976.0
 margin_bottom = 666.0
+script = ExtResource( 16 )
 
 [node name="Label" type="Label" parent="HBox/Stream/VBox/Subtitle"]
 margin_left = 408.0
@@ -121,3 +146,5 @@ margin_right = 300.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[connection signal="talk_line_changed" from="HBox/Stream" to="HBox/Stream/VBox/Subtitle" method="_on_Stream_talk_line_changed"]

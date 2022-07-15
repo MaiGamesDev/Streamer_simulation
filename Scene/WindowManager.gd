@@ -1,4 +1,4 @@
-extends MarginContainer
+extends Control
 
 signal move_to_top
 
